@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+*.pyc
+__marimo__/
+.pytest_cache/
