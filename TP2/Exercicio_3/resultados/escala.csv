@@ -1,0 +1,11 @@
+n,propriedade,base,passo,segundos_base,segundos_passo,provado
+4,modular,unsat,unsat,0.004963,0.017444,True
+4,seguranca,unsat,unsat,0.000897,0.01453,True
+6,modular,unsat,unsat,0.012744,0.389941,True
+6,seguranca,unsat,unsat,0.000999,0.100736,True
+8,modular,unsat,unknown,0.142893,3.001187,False
+8,seguranca,unsat,unknown,0.000948,3.001158,False
+12,modular,unknown,unknown,3.001012,3.005358,False
+12,seguranca,unsat,unknown,0.000973,3.001779,False
+16,modular,unknown,unknown,3.001313,3.017676,False
+16,seguranca,unsat,unknown,0.001005,3.002461,False

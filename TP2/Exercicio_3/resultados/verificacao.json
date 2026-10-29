@@ -1,0 +1,829 @@
+{
+  "ambiente": {
+    "python": "3.12.14",
+    "marimo": "0.25.2",
+    "z3": "4.16.0",
+    "sistema": "Linux",
+    "data_utc": "2026-10-26T18:13:16.011900+00:00",
+    "timeout_ms_por_consulta": 3000,
+    "seed_z3": 0
+  },
+  "provas_por_largura": [
+    {
+      "n": 4,
+      "modular": {
+        "n": 4,
+        "k": 2,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.004963
+        },
+        "passo": {
+          "estado": "unsat",
+          "segundos": 0.017444
+        },
+        "provado": true
+      },
+      "seguranca": {
+        "n": 4,
+        "k": 1,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.000897
+        },
+        "passo": {
+          "estado": "unsat",
+          "segundos": 0.01453
+        },
+        "provado": true
+      }
+    },
+    {
+      "n": 6,
+      "modular": {
+        "n": 6,
+        "k": 2,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.012744
+        },
+        "passo": {
+          "estado": "unsat",
+          "segundos": 0.389941
+        },
+        "provado": true
+      },
+      "seguranca": {
+        "n": 6,
+        "k": 1,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.000999
+        },
+        "passo": {
+          "estado": "unsat",
+          "segundos": 0.100736
+        },
+        "provado": true
+      }
+    },
+    {
+      "n": 8,
+      "modular": {
+        "n": 8,
+        "k": 2,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.142893
+        },
+        "passo": {
+          "estado": "unknown",
+          "segundos": 3.001187,
+          "motivo": "timeout"
+        },
+        "provado": false
+      },
+      "seguranca": {
+        "n": 8,
+        "k": 1,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.000948
+        },
+        "passo": {
+          "estado": "unknown",
+          "segundos": 3.001158,
+          "motivo": "timeout"
+        },
+        "provado": false
+      }
+    },
+    {
+      "n": 12,
+      "modular": {
+        "n": 12,
+        "k": 2,
+        "base": {
+          "estado": "unknown",
+          "segundos": 3.001012,
+          "motivo": "timeout"
+        },
+        "passo": {
+          "estado": "unknown",
+          "segundos": 3.005358,
+          "motivo": "timeout"
+        },
+        "provado": false
+      },
+      "seguranca": {
+        "n": 12,
+        "k": 1,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.000973
+        },
+        "passo": {
+          "estado": "unknown",
+          "segundos": 3.001779,
+          "motivo": "timeout"
+        },
+        "provado": false
+      }
+    },
+    {
+      "n": 16,
+      "modular": {
+        "n": 16,
+        "k": 2,
+        "base": {
+          "estado": "unknown",
+          "segundos": 3.001313,
+          "motivo": "timeout"
+        },
+        "passo": {
+          "estado": "unknown",
+          "segundos": 3.017676,
+          "motivo": "timeout"
+        },
+        "provado": false
+      },
+      "seguranca": {
+        "n": 16,
+        "k": 1,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.001005
+        },
+        "passo": {
+          "estado": "unknown",
+          "segundos": 3.002461,
+          "motivo": "timeout"
+        },
+        "provado": false
+      }
+    }
+  ],
+  "modular_k1": {
+    "n": 4,
+    "k": 1,
+    "base": {
+      "estado": "unsat",
+      "segundos": 0.000699
+    },
+    "passo": {
+      "estado": "sat",
+      "segundos": 0.005255,
+      "caminho": [
+        {
+          "pc": 2,
+          "a": 1,
+          "b": 15,
+          "x": 14,
+          "y": 3,
+          "z": 5
+        },
+        {
+          "pc": 5,
+          "a": 1,
+          "b": 15,
+          "x": 12,
+          "y": 1,
+          "z": 5
+        }
+      ]
+    },
+    "provado": false
+  },
+  "modular_k2_referencia": {
+    "n": 8,
+    "k": 2,
+    "base": {
+      "estado": "unsat",
+      "segundos": 0.173588
+    },
+    "passo": {
+      "estado": "unsat",
+      "segundos": 10.871023
+    },
+    "provado": true
+  },
+  "seguranca_referencia": {
+    "n": 8,
+    "k": 1,
+    "base": {
+      "estado": "unsat",
+      "segundos": 0.001197
+    },
+    "passo": {
+      "estado": "unsat",
+      "segundos": 3.076118
+    },
+    "provado": true
+  },
+  "seguranca_com_sinal_corrigida": {
+    "n": 6,
+    "k": 1,
+    "base": {
+      "estado": "unsat",
+      "segundos": 0.001578
+    },
+    "passo": {
+      "estado": "unsat",
+      "segundos": 0.095966
+    },
+    "provado": true
+  },
+  "terminacao": [
+    {
+      "n": 4,
+      "controlo": {
+        "n": 4,
+        "k": 1,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.000712
+        },
+        "passo": {
+          "estado": "unsat",
+          "segundos": 0.002865
+        },
+        "provado": true
+      },
+      "rank_positivo": {
+        "estado": "unsat",
+        "segundos": 0.000914
+      },
+      "rank_desce": {
+        "estado": "unsat",
+        "segundos": 0.00284
+      },
+      "provado": true
+    },
+    {
+      "n": 8,
+      "controlo": {
+        "n": 8,
+        "k": 1,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.000678
+        },
+        "passo": {
+          "estado": "unsat",
+          "segundos": 0.002798
+        },
+        "provado": true
+      },
+      "rank_positivo": {
+        "estado": "unsat",
+        "segundos": 0.000842
+      },
+      "rank_desce": {
+        "estado": "unsat",
+        "segundos": 0.003581
+      },
+      "provado": true
+    },
+    {
+      "n": 16,
+      "controlo": {
+        "n": 16,
+        "k": 1,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.00061
+        },
+        "passo": {
+          "estado": "unsat",
+          "segundos": 0.003261
+        },
+        "provado": true
+      },
+      "rank_positivo": {
+        "estado": "unsat",
+        "segundos": 0.000881
+      },
+      "rank_desce": {
+        "estado": "unsat",
+        "segundos": 0.004558
+      },
+      "provado": true
+    },
+    {
+      "n": 32,
+      "controlo": {
+        "n": 32,
+        "k": 1,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.000598
+        },
+        "passo": {
+          "estado": "unsat",
+          "segundos": 0.004168
+        },
+        "provado": true
+      },
+      "rank_positivo": {
+        "estado": "unsat",
+        "segundos": 0.000913
+      },
+      "rank_desce": {
+        "estado": "unsat",
+        "segundos": 0.014523
+      },
+      "provado": true
+    },
+    {
+      "n": 64,
+      "controlo": {
+        "n": 64,
+        "k": 1,
+        "base": {
+          "estado": "unsat",
+          "segundos": 0.000731
+        },
+        "passo": {
+          "estado": "unsat",
+          "segundos": 0.006217
+        },
+        "provado": true
+      },
+      "rank_positivo": {
+        "estado": "unsat",
+        "segundos": 0.001009
+      },
+      "rank_desce": {
+        "estado": "unsat",
+        "segundos": 0.02777
+      },
+      "provado": true
+    }
+  ],
+  "animacao_limitada": {
+    "limite": 16,
+    "estado": "unsat",
+    "segundos": 0.010944
+  },
+  "sucesso_limitado": {
+    "limite": 16,
+    "estado": "unsat",
+    "segundos": 0.01151
+  },
+  "contraexemplo_sem_limites": {
+    "estado": "sat",
+    "segundos": 0.007491,
+    "caminho": [
+      {
+        "pc": 0,
+        "a": 4,
+        "b": 15,
+        "x": 4,
+        "y": 15,
+        "z": 0
+      },
+      {
+        "pc": 1,
+        "a": 4,
+        "b": 15,
+        "x": 4,
+        "y": 15,
+        "z": 0
+      },
+      {
+        "pc": 3,
+        "a": 4,
+        "b": 15,
+        "x": 4,
+        "y": 15,
+        "z": 0
+      },
+      {
+        "pc": 1,
+        "a": 4,
+        "b": 15,
+        "x": 4,
+        "y": 14,
+        "z": 4
+      },
+      {
+        "pc": 2,
+        "a": 4,
+        "b": 15,
+        "x": 4,
+        "y": 14,
+        "z": 4
+      },
+      {
+        "pc": 1,
+        "a": 4,
+        "b": 15,
+        "x": 8,
+        "y": 7,
+        "z": 4
+      },
+      {
+        "pc": 3,
+        "a": 4,
+        "b": 15,
+        "x": 8,
+        "y": 7,
+        "z": 4
+      },
+      {
+        "pc": 1,
+        "a": 4,
+        "b": 15,
+        "x": 8,
+        "y": 6,
+        "z": 12
+      },
+      {
+        "pc": 2,
+        "a": 4,
+        "b": 15,
+        "x": 8,
+        "y": 6,
+        "z": 12
+      },
+      {
+        "pc": 5,
+        "a": 4,
+        "b": 15,
+        "x": 0,
+        "y": 3,
+        "z": 12
+      },
+      {
+        "pc": 5,
+        "a": 4,
+        "b": 15,
+        "x": 0,
+        "y": 3,
+        "z": 12
+      }
+    ]
+  },
+  "contraexemplo_com_sinal": {
+    "estado": "sat",
+    "segundos": 0.010146,
+    "caminho": [
+      {
+        "pc": 0,
+        "a": 3,
+        "b": 3,
+        "x": 3,
+        "y": 3,
+        "z": 0
+      },
+      {
+        "pc": 1,
+        "a": 3,
+        "b": 3,
+        "x": 3,
+        "y": 3,
+        "z": 0
+      },
+      {
+        "pc": 3,
+        "a": 3,
+        "b": 3,
+        "x": 3,
+        "y": 3,
+        "z": 0
+      },
+      {
+        "pc": 1,
+        "a": 3,
+        "b": 3,
+        "x": 3,
+        "y": 2,
+        "z": 3
+      },
+      {
+        "pc": 2,
+        "a": 3,
+        "b": 3,
+        "x": 3,
+        "y": 2,
+        "z": 3
+      },
+      {
+        "pc": 1,
+        "a": 3,
+        "b": 3,
+        "x": 6,
+        "y": 1,
+        "z": 3
+      },
+      {
+        "pc": 3,
+        "a": 3,
+        "b": 3,
+        "x": 6,
+        "y": 1,
+        "z": 3
+      },
+      {
+        "pc": 6,
+        "a": 3,
+        "b": 3,
+        "x": 6,
+        "y": 0,
+        "z": 9
+      },
+      {
+        "pc": 6,
+        "a": 3,
+        "b": 3,
+        "x": 6,
+        "y": 0,
+        "z": 9
+      },
+      {
+        "pc": 6,
+        "a": 3,
+        "b": 3,
+        "x": 6,
+        "y": 0,
+        "z": 9
+      },
+      {
+        "pc": 6,
+        "a": 3,
+        "b": 3,
+        "x": 6,
+        "y": 0,
+        "z": 9
+      },
+      {
+        "pc": 6,
+        "a": 3,
+        "b": 3,
+        "x": 6,
+        "y": 0,
+        "z": 9
+      },
+      {
+        "pc": 6,
+        "a": 3,
+        "b": 3,
+        "x": 6,
+        "y": 0,
+        "z": 9
+      }
+    ]
+  },
+  "exemplo": [
+    {
+      "pc": 0,
+      "a": 13,
+      "b": 11,
+      "x": 13,
+      "y": 11,
+      "z": 0
+    },
+    {
+      "pc": 1,
+      "a": 13,
+      "b": 11,
+      "x": 13,
+      "y": 11,
+      "z": 0
+    },
+    {
+      "pc": 3,
+      "a": 13,
+      "b": 11,
+      "x": 13,
+      "y": 11,
+      "z": 0
+    },
+    {
+      "pc": 1,
+      "a": 13,
+      "b": 11,
+      "x": 13,
+      "y": 10,
+      "z": 13
+    },
+    {
+      "pc": 2,
+      "a": 13,
+      "b": 11,
+      "x": 13,
+      "y": 10,
+      "z": 13
+    },
+    {
+      "pc": 1,
+      "a": 13,
+      "b": 11,
+      "x": 26,
+      "y": 5,
+      "z": 13
+    },
+    {
+      "pc": 3,
+      "a": 13,
+      "b": 11,
+      "x": 26,
+      "y": 5,
+      "z": 13
+    },
+    {
+      "pc": 1,
+      "a": 13,
+      "b": 11,
+      "x": 26,
+      "y": 4,
+      "z": 39
+    },
+    {
+      "pc": 2,
+      "a": 13,
+      "b": 11,
+      "x": 26,
+      "y": 4,
+      "z": 39
+    },
+    {
+      "pc": 1,
+      "a": 13,
+      "b": 11,
+      "x": 52,
+      "y": 2,
+      "z": 39
+    },
+    {
+      "pc": 2,
+      "a": 13,
+      "b": 11,
+      "x": 52,
+      "y": 2,
+      "z": 39
+    },
+    {
+      "pc": 1,
+      "a": 13,
+      "b": 11,
+      "x": 104,
+      "y": 1,
+      "z": 39
+    },
+    {
+      "pc": 3,
+      "a": 13,
+      "b": 11,
+      "x": 104,
+      "y": 1,
+      "z": 39
+    },
+    {
+      "pc": 1,
+      "a": 13,
+      "b": 11,
+      "x": 104,
+      "y": 0,
+      "z": 143
+    },
+    {
+      "pc": 4,
+      "a": 13,
+      "b": 11,
+      "x": 104,
+      "y": 0,
+      "z": 143
+    }
+  ],
+  "exemplo_signed_15_15": [
+    {
+      "pc": 0,
+      "a": 15,
+      "b": 15,
+      "x": 15,
+      "y": 15,
+      "z": 0
+    },
+    {
+      "pc": 1,
+      "a": 15,
+      "b": 15,
+      "x": 15,
+      "y": 15,
+      "z": 0
+    },
+    {
+      "pc": 3,
+      "a": 15,
+      "b": 15,
+      "x": 15,
+      "y": 15,
+      "z": 0
+    },
+    {
+      "pc": 1,
+      "a": 15,
+      "b": 15,
+      "x": 15,
+      "y": 14,
+      "z": 15
+    },
+    {
+      "pc": 2,
+      "a": 15,
+      "b": 15,
+      "x": 15,
+      "y": 14,
+      "z": 15
+    },
+    {
+      "pc": 1,
+      "a": 15,
+      "b": 15,
+      "x": 30,
+      "y": 7,
+      "z": 15
+    },
+    {
+      "pc": 3,
+      "a": 15,
+      "b": 15,
+      "x": 30,
+      "y": 7,
+      "z": 15
+    },
+    {
+      "pc": 1,
+      "a": 15,
+      "b": 15,
+      "x": 30,
+      "y": 6,
+      "z": 45
+    },
+    {
+      "pc": 2,
+      "a": 15,
+      "b": 15,
+      "x": 30,
+      "y": 6,
+      "z": 45
+    },
+    {
+      "pc": 1,
+      "a": 15,
+      "b": 15,
+      "x": 60,
+      "y": 3,
+      "z": 45
+    },
+    {
+      "pc": 3,
+      "a": 15,
+      "b": 15,
+      "x": 60,
+      "y": 3,
+      "z": 45
+    },
+    {
+      "pc": 1,
+      "a": 15,
+      "b": 15,
+      "x": 60,
+      "y": 2,
+      "z": 105
+    },
+    {
+      "pc": 2,
+      "a": 15,
+      "b": 15,
+      "x": 60,
+      "y": 2,
+      "z": 105
+    },
+    {
+      "pc": 1,
+      "a": 15,
+      "b": 15,
+      "x": 120,
+      "y": 1,
+      "z": 105
+    },
+    {
+      "pc": 3,
+      "a": 15,
+      "b": 15,
+      "x": 120,
+      "y": 1,
+      "z": 105
+    },
+    {
+      "pc": 6,
+      "a": 15,
+      "b": 15,
+      "x": 120,
+      "y": 0,
+      "z": 225
+    }
+  ]
+}
