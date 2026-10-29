@@ -33,12 +33,12 @@
     },
     {
       "id": "vblA",
-      "code_hash": "e2b78338bf25eb76d1d592e93217e6c1",
+      "code_hash": "995a600eeadaab0a4d3a84a3802950ff",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"estado-inicial\">Estado inicial</h2>\n<span class=\"paragraph\">O estado \u00e9 uma grelha <marimo-tex class=\"arithmatex\">||((N+2) \\times (N+2)||)</marimo-tex>. Os \u00edndices de 1 a <marimo-tex class=\"arithmatex\">||(N||)</marimo-tex>\ncorrespondem \u00e0s c\u00e9lulas normais. A linha e a coluna de \u00edndice 0 formam\na fronteira inicial; a linha e a coluna de \u00edndice <marimo-tex class=\"arithmatex\">||(N+1||)</marimo-tex> formam a\nfronteira final.</span>\n<span class=\"paragraph\">Cada c\u00e9lula da fronteira inicial \u00e9 escolhida de forma independente,\ncom probabilidade <marimo-tex class=\"arithmatex\">||(1/2||)</marimo-tex> de estar viva. Uma semente permite reproduzir\na mesma escolha num exemplo concreto.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"estado-inicial\">Estado inicial</h2>\n<span class=\"paragraph\">O estado \u00e9 uma grelha <marimo-tex class=\"arithmatex\">||((N+2) \\times (N+2)||)</marimo-tex>. Os \u00edndices de 1 a <marimo-tex class=\"arithmatex\">||(N||)</marimo-tex>\ncorrespondem \u00e0s c\u00e9lulas normais. A linha e a coluna de \u00edndice 0 formam\na fronteira inicial; a linha e a coluna de \u00edndice <marimo-tex class=\"arithmatex\">||(N+1||)</marimo-tex> formam a\nfronteira final.</span>\n<span class=\"paragraph\">Cada c\u00e9lula da fronteira inicial \u00e9 escolhida de forma independente,\ncom probabilidade <marimo-tex class=\"arithmatex\">||(1/2||)</marimo-tex> de estar viva. O par\u00e2metro <code>seed</code> permite reproduzir\na mesma escolha num exemplo concreto.</span></span>"
           }
         }
       ],
@@ -59,7 +59,7 @@
     },
     {
       "id": "lEQa",
-      "code_hash": "385f4ad3d8257e474bb4aa2dd74e5d51",
+      "code_hash": "3de16cfeb4400cf2e5d61aaf7e59e05d",
       "outputs": [
         {
           "type": "data",
@@ -72,7 +72,7 @@
     },
     {
       "id": "PKri",
-      "code_hash": "0a0c14f821495d882a1a4831bb06698c",
+      "code_hash": "b431bfbd46adb3b7849a253fc1b98e69",
       "outputs": [
         {
           "type": "data",
@@ -85,12 +85,38 @@
     },
     {
       "id": "Xref",
-      "code_hash": "56212d716831ea61ccd0dd782a75a566",
+      "code_hash": "640dac4ecdb5bdb91eaa507678b7c122",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"evolucao-e-propriedades\">Evolu\u00e7\u00e3o e propriedades</h2>\n<span class=\"paragraph\">Uma c\u00e9lula morta nasce quando tem exatamente tr\u00eas vizinhos vivos.\nUma c\u00e9lula viva sobrevive quando tem dois ou tr\u00eas vizinhos vivos.\nNos restantes casos, a c\u00e9lula fica morta.</span>\n<span class=\"paragraph\">Consideram-se duas rela\u00e7\u00f5es de transi\u00e7\u00e3o: a atualiza\u00e7\u00e3o de uma c\u00e9lula\nnormal por passo e a atualiza\u00e7\u00e3o simult\u00e2nea de todas as c\u00e9lulas normais.</span>\n<span class=\"paragraph\">As propriedades a verificar s\u00e3o a n\u00e3o alcan\u00e7abilidade do estado em que\ntodas as c\u00e9lulas normais est\u00e3o mortas e a aus\u00eancia de c\u00e9lulas normais\npermanentemente mortas ou vivas.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"evolucao-e-propriedades\">Evolu\u00e7\u00e3o e propriedades</h2>\n<span class=\"paragraph\">Uma c\u00e9lula morta nasce quando tem exatamente tr\u00eas vizinhos vivos.\nUma c\u00e9lula viva sobrevive quando tem dois ou tr\u00eas vizinhos vivos.\nNos restantes casos, a c\u00e9lula fica morta.</span>\n<span class=\"paragraph\">S\u00e3o vizinhas as c\u00e9lulas cuja diferen\u00e7a m\u00e1xima entre \u00edndices \u00e9 1,\nexcluindo a pr\u00f3pria c\u00e9lula. Cada c\u00e9lula normal tem assim at\u00e9 oito\nvizinhos, incluindo os diagonais.</span>\n<span class=\"paragraph\">Consideram-se duas rela\u00e7\u00f5es de transi\u00e7\u00e3o: a atualiza\u00e7\u00e3o de uma c\u00e9lula\nnormal escolhida por passo e a atualiza\u00e7\u00e3o simult\u00e2nea de todas as\nc\u00e9lulas normais. No segundo caso, todas usam o mesmo estado anterior\npara contar os vizinhos. As c\u00e9lulas das fronteiras conservam o valor.</span>\n<span class=\"paragraph\">As propriedades a verificar s\u00e3o a n\u00e3o alcan\u00e7abilidade do estado em que\ntodas as c\u00e9lulas normais est\u00e3o mortas e a aus\u00eancia de c\u00e9lulas normais\npermanentemente mortas ou vivas.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "79c530fc21a6ce55fde6259410a3786f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "8914cc0097926f57520424ef6a97fd4f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">No modo <strong>simultaneo</strong>, mudaram <strong>10 c\u00e9lulas normais</strong> na primeira transi\u00e7\u00e3o.</span></span>"
           }
         }
       ],

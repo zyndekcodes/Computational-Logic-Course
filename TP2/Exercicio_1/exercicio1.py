@@ -107,8 +107,14 @@ def _(mo):
         Uma célula viva sobrevive quando tem dois ou três vizinhos vivos.
         Nos restantes casos, a célula fica morta.
 
+        São vizinhas as células cuja diferença máxima entre índices é 1,
+        excluindo a própria célula. Cada célula normal tem assim até oito
+        vizinhos, incluindo os diagonais.
+
         Consideram-se duas relações de transição: a atualização de uma célula
-        normal por passo e a atualização simultânea de todas as células normais.
+        normal escolhida por passo e a atualização simultânea de todas as
+        células normais. No segundo caso, todas usam o mesmo estado anterior
+        para contar os vizinhos. As células das fronteiras conservam o valor.
 
         As propriedades a verificar são a não alcançabilidade do estado em que
         todas as células normais estão mortas e a ausência de células normais
@@ -116,6 +122,74 @@ def _(mo):
         """
     )
     return
+
+
+@app.cell
+def _():
+    def contar_vizinhos(estado, i: int, j: int) -> int:
+        n = len(estado) - 2
+        if not (1 <= i <= n and 1 <= j <= n):
+            raise ValueError("A célula tem de pertencer à grelha normal")
+
+        return sum(
+            estado[i + di][j + dj]
+            for di in (-1, 0, 1)
+            for dj in (-1, 0, 1)
+            if di != 0 or dj != 0
+        )
+
+    def proximo_valor(estado, i: int, j: int) -> bool:
+        vizinhos = contar_vizinhos(estado, i, j)
+        return vizinhos == 3 or (estado[i][j] and vizinhos == 2)
+
+    def transicao(estado, modo: str, celula: tuple[int, int] | None = None):
+        n = len(estado) - 2
+
+        if n <= 16 or any(len(linha) != n + 2 for linha in estado):
+            raise ValueError("O estado deve ser uma grelha quadrada com N > 16")
+        if any(estado[n + 1]) or any(estado[i][n + 1] for i in range(n + 1)):
+            raise ValueError("A fronteira final tem de estar morta")
+
+        seguinte = [list(linha) for linha in estado]
+
+        if modo == "individual":
+            if celula is None:
+                raise ValueError("Indica a célula normal a atualizar")
+            
+            i, j = celula
+            seguinte[i][j] = proximo_valor(estado, i, j)
+        elif modo == "simultaneo":
+            for i in range(1, n + 1):
+                for j in range(1, n + 1):
+                    seguinte[i][j] = proximo_valor(estado, i, j)
+        else:
+            raise ValueError("O modo deve ser 'individual' ou 'simultaneo'")
+
+        return tuple(tuple(linha) for linha in seguinte)
+
+    return contar_vizinhos, proximo_valor, transicao
+
+
+@app.cell
+def _(estado0, mo, n, transicao):
+    modo = "simultaneo"
+    celula = (1, 1)
+    estado1 = transicao(
+        estado0,
+        modo,
+        celula if modo == "individual" else None,
+    )
+    alteradas = sum(
+        estado0[i][j] != estado1[i][j]
+        for i in range(1, n + 1)
+        for j in range(1, n + 1)
+    )
+
+    mo.md(
+        f"No modo **{modo}**, mudaram **{alteradas} células normais** "
+        "na primeira transição."
+    )
+    return (estado1, modo)
 
 
 if __name__ == "__main__":
